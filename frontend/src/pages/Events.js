@@ -3,7 +3,8 @@ import { useLoaderData } from 'react-router-dom';
 import EventsList from '../components/EventsList';
 
 const Events = () => {
-  const events = useLoaderData();
+  const data = useLoaderData();
+  const events = data.events;
 
   return (
     <>
@@ -21,7 +22,14 @@ export const loader = async() => {
   if (!response.ok) {
     // ...
   } else {
-    const resData = await response.json();
-    return resData.events;
+    // const resData = await response.json();
+    // return resData.events;
+    // can also send custom response using Response() for creating respose
+    // 1st argument - Any Data
+    //  2nd argment - any more data that can be configured about response
+    // const res = new Response('any data', {status: 201});
+    // return res;
+
+    return response;
   }
 }
