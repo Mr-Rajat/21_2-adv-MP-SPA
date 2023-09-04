@@ -5,7 +5,7 @@ import EventItem from '../components/EventItem';
 const EventDetail = () => {
   const params = useParams();
   const data = useLoaderData();
-  console.log(data);
+  // console.log(data);
   return (
     <>
       <EventItem event={data.event}/>

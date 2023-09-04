@@ -1,8 +1,9 @@
 import React from 'react'
+import EventForm from '../components/EventForm'
 
 const EditEvent = () => {
   return (
-    <h1>EditEvent</h1>
+    <EventForm />
   )
 }
 
