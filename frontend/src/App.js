@@ -56,6 +56,7 @@ function App() {
             {
               path: ':eventId',
               loader: eventDetailLoader,
+              id: 'event-detail',
               children: [
                 {
                   index: true,
