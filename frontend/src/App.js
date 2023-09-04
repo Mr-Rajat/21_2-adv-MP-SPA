@@ -55,11 +55,11 @@ function App() {
             },
             {
               path: ':eventId',
+              loader: eventDetailLoader,
               children: [
                 {
                   index: true,
                   element: <EventDetail />,
-                  loader: eventDetailLoader
                 },
 
                 { path: 'edit', element: <EditEvent /> }
