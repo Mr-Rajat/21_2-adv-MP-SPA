@@ -1,8 +1,10 @@
-import { Form, useNavigate, useNavigation } from 'react-router-dom';
+import { Form, useActionData, useNavigate, useNavigation } from 'react-router-dom';
 
 import classes from './EventForm.module.css';
 
 function EventForm({ method, event }) {
+  const data = useActionData();
+  // it gives us access to the data return by action and provide access to the closest action.
   const navigate = useNavigate();
   const navigation = useNavigation();
 
@@ -15,6 +17,9 @@ function EventForm({ method, event }) {
   return (
     // this Form component omit the actual form submit and send its data to the action there it submit as the part of form
     <Form method='post' className={classes.form}>
+      { data && data.errors && <ul>
+        {Object.values(data.errors).map(err => 
+          <li key={err}>{err}</li>)}</ul>}
       <p>
         <label htmlFor="title">Title</label>
         <input id="title" type="text" name="title" defaultValue={event ? event.title : ''} required />
