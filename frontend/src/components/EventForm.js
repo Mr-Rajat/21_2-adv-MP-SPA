@@ -1,15 +1,16 @@
-import { useNavigate } from 'react-router-dom';
+import { Form, useNavigate } from 'react-router-dom';
 
 import classes from './EventForm.module.css';
 
 function EventForm({ method, event }) {
   const navigate = useNavigate();
   function cancelHandler() {
-    navigate('..');
+    // navigate('..');
   }
 
   return (
-    <form className={classes.form}>
+    // this Form component omit the actual form submit and send its data to the action there it submit as the part of form
+    <Form method='post' className={classes.form}>
       <p>
         <label htmlFor="title">Title</label>
         <input id="title" type="text" name="title" defaultValue={event ? event.title : ''} required />
@@ -32,7 +33,7 @@ function EventForm({ method, event }) {
         </button>
         <button>Save</button>
       </div>
-    </form>
+    </Form>
   );
 }
 

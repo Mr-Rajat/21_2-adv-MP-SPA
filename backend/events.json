@@ -1,11 +1,1 @@
-{
-  "events": [
-    {
-      "id": "e1",
-      "title": "A dummy event",
-      "date": "2023-02-22",
-      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
-      "description": "Join this amazing event and connect with fellow developers."
-    }
-  ]
-}
+{"events":[{"title":"Marriage","image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqGeaGdbrtNOR0-uImXAIUS8kwOOdDyrggSA&usqp=CAU","date":"2023-09-13","description":"This is marriage event...","id":"d429d0b3-6048-4fae-9a28-b1a660d1b638"},{"title":"New Event 2","image":"https://3.imimg.com/data3/HA/RV/MY-15338069/wedding-management-500x500.jpg","date":"2023-09-06","description":"This is new event","id":"9bb7729f-4544-4352-98dc-78b9bc758760"},{"title":"New Event","image":"https://nearmetrade.com/local/public/vendor/141577636354-popular+event+management+Company+in+kollam.jpg","date":"2023-09-05","description":"Hello World ","id":"ad29f8b7-2fcd-4e63-809d-2dafa838ab64"},{"id":"e1","title":"A dummy event","date":"2023-02-22","image":"https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg","description":"Join this amazing event and connect with fellow developers."}]}
