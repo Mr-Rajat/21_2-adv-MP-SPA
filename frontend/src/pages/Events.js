@@ -41,7 +41,7 @@ const loadEvents = async () => {
     // const res = new Response('any data', {status: 201});
     // return res;
 
-    return response;
+    // return response;
   }
 }
 
