@@ -40,6 +40,7 @@ import { action as manipulateEventAction} from './components/EventForm'
 import NewsletterPage, { action as newsletterAction} from './pages/Newsletter';
 function App() {
 
+  // You could target a single route by setting the "action" attribute but you would initialize a transition to this route ( and leave the current route). More details shown soon.!!
   const router = createBrowserRouter([
     {
       path: '/', element: <RootLayout />,
