@@ -1,26 +1,24 @@
-import { useLoaderData, json } from 'react-router-dom';
+import { useLoaderData, json, defer, Await } from 'react-router-dom';
 // This is special hook we can execute to get access to the closest loader data
 import EventsList from '../components/EventsList';
+import { Suspense } from 'react';
 
 const Events = () => {
-  const data = useLoaderData();
-
-  // if( data.isError){
-  //   return <p>{data.message}</p>
-  // }
-  const events = data.events;
+  const { events } = useLoaderData();
 
   return (
-    <>
-      {/* <EventsList /> */}
-      <EventsList events={events} />
-    </>
-  );
+    <Suspense fallback={<p style={{ textAlign: 'center' }}>Loading...</p>}>
+      <Await resolve={events}>
+        {(loadedEvents) => <EventsList events={loadedEvents} />}
+      </Await>
+    </Suspense>
+  )
+
 }
 
 export default Events;
 
-export const loader = async() => {
+const loadEvents = async () => {
   const response = await fetch('http://localhost:8080/events');
 
   if (!response.ok) {
@@ -30,9 +28,11 @@ export const loader = async() => {
     //   status:500,
     // });
     throw json({ message: 'Could not fetch events.' }, {
-      status : 500,
+      status: 500,
     });
   } else {
+    const resData = await response.json();
+    return resData.events
     // const resData = await response.json();
     // return resData.events;
     // can also send custom response using Response() for creating respose
@@ -43,4 +43,10 @@ export const loader = async() => {
 
     return response;
   }
+}
+
+export const loader = () => {
+  return defer({
+    events: loadEvents()
+  });
 }
